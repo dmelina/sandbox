@@ -19,7 +19,7 @@ pipeline {
 		stage('test-golang') {
 			agent {
 				docker {
-					image 'golag:alpine'
+					image 'golang:alpine'
 					args '-v /var/run/docker.sock:/var/run/docker.sock'
 				}
 			}
