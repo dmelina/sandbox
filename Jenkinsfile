@@ -1,6 +1,5 @@
 pipeline {
 	agent { none }
-	}
 
 	stages {
 		stage('test') {
@@ -10,6 +9,7 @@ pipeline {
 						image 'node:alpine'
 						args '-v /var/run/docker.sock:/var/run/docker.sock'
 					}
+				}
 				echo 'Test node version'
 				sh 'node --version'
 			}
