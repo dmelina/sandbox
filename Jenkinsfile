@@ -2,11 +2,8 @@ pipeline {
 	agent {
 		docker {
 			image 'node:alpine'
+			args '--host tcp://192.168.1.22:4243'
 		}
-	}
-
-	environment {
-		DOCKER_HOST = 'tcp://192.168.1.22:4243'
 	}
 
 	stages {
