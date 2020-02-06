@@ -2,7 +2,7 @@ pipeline {
 	agent {
 		docker {
 			image 'node:alpine'
-			args '--host tcp://192.168.1.22:4243'
+			args '-v /var/run/docker.sock:/var/run/docker.sock'
 		}
 	}
 
