@@ -1,18 +1,14 @@
 pipeline {
 
-	agent none
-
-//	environment {
-//		DOCKER_HOST = 'tcp://192.168.1.22:4243'
-//	}
+//	agent none
+	agent {
+		docker {
+			image 'node:alpine'
+		}
+	}
 
 	stages {
 		stage('test-node') {
-			agent {
-				docker {
-					image 'node:alpine'
-				}
-			}
 			steps {
 				echo 'Test node version'
 				sh 'ls -l'
