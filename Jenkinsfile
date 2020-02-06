@@ -7,12 +7,11 @@ pipeline {
 	}
 
 	stages {
+		agent {
+			docker {
+				image 'node:alpine'
+		}
 		stage('test-node') {
-			agent {
-				docker {
-					image 'node:alpine'
-//					args '-v /var/run/docker.sock:/var/run/docker.sock'
-				}
 			}
 			steps {
 				echo 'Test node version'
@@ -20,17 +19,17 @@ pipeline {
 				sh 'node --version'
 			}
 		}
-		stage('test-golang') {
-			agent {
-				docker {
-					image 'golang:alpine'
-				}
-			}
-			steps {
-				echo 'Test go version'
-				sh 'ls -l'
-				sh 'go version'
-			}
-		}
+		//stage('test-golang') {
+		//	agent {
+		//		docker {
+		//			image 'golang:alpine'
+		//		}
+		//	}
+		//	steps {
+		//		echo 'Test go version'
+		//		sh 'ls -l'
+		//		sh 'go version'
+		//	}
+		//}
 	}
 }
