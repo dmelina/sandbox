@@ -20,7 +20,7 @@ pipeline {
 			agent {
 				docker {
 					image 'golang:alpine'
-					args '-v /var/run/docker.sock:/var/run/docker.sock'
+#					args '-v /var/run/docker.sock:/var/run/docker.sock'
 				}
 			}
 			steps {
