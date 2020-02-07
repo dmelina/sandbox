@@ -25,10 +25,10 @@ pipeline {
         def jsonSlurper = new JsonSlurper()
         def object = jsonSlurper.parseText('{ "name": "John Doe" } /* some comment */')
         
-        assert object instanceof Map
-        assert object.name == 'John Doe'
+        //assert object instanceof Map
+        //assert object.name == 'John Doe'
 
-        sh "echo ${object.name}"
+        //sh "echo ${object.name}"
         }
 			}
 		}
