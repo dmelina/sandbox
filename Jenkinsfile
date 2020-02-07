@@ -3,7 +3,7 @@ pipeline {
 //	agent any
 	agent {
 		docker {
-			image 'openjdk:8-slim'
+			image 'node'
 		}
 	}
 
