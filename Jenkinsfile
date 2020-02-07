@@ -26,7 +26,7 @@ pipeline {
 
         def result = toJson(payload)
 
-        sh "echo ${result.name}"
+        sh "echo ${result}"
         
         //assert object instanceof Map
         //assert object.name == 'John Doe'
