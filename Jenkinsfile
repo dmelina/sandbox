@@ -3,12 +3,12 @@ def jsonString = '{"name":"katone","age":5}'
 
 pipeline {
 
-	agent any
-//	agent {
-//		docker {
-//			image 'openjdk:8-slim'
-//		}
-//	}
+//	agent any
+	agent {
+		docker {
+			image 'openjdk:8-slim'
+		}
+	}
 
 	stages {
 		stage('test-node') {
