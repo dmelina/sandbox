@@ -1,11 +1,11 @@
 pipeline {
 
-//	agent none
-	agent {
-		docker {
-			image 'openjdk:8-slim'
-		}
-	}
+	agent any
+//	agent {
+//		docker {
+//			image 'openjdk:8-slim'
+//		}
+//	}
 
 	stages {
 		stage('test-node') {
