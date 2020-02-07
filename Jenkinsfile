@@ -1,4 +1,4 @@
-import groovy.json.JsonSlurper
+import groovy.json.JsonSlurperClassic
 
 pipeline {
 
@@ -51,7 +51,7 @@ pipeline {
 
 @NonCPS
 def toJson(String object) {
-  def jsonSlurper = new JsonSlurper()
+  def jsonSlurper = new JsonSlurperJsonSlurperClassic()
   def parse = jsonSlurper.parseText(object)
-  assert parse instanceof Map
+  //assert parse instanceof Map
 }
