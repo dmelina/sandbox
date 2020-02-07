@@ -51,7 +51,7 @@ pipeline {
 
 @NonCPS
 def toJson(String object) {
-  def jsonSlurper = new JsonSlurperJsonSlurperClassic()
+  def jsonSlurper = new JsonSlurperClassic()
   def parse = jsonSlurper.parseText(object)
   //assert parse instanceof Map
 }
