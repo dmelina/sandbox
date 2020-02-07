@@ -1,3 +1,6 @@
+
+def jsonString = '{"name":"katone","age":5}'
+
 pipeline {
 
 	agent any
@@ -14,7 +17,6 @@ pipeline {
 				sh 'ls -l'
 				sh 'printenv'
 				sh 'node --version'
-        def jsonString = '{"name":"katone","age":5}'
         //def jsonObj = readJSON text: jsonString
 
         //assert jsonObj['name'] == 'katone'  // this is a comparison.  It returns true
