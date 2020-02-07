@@ -21,11 +21,14 @@ pipeline {
 		stage('json-parse') {
 			steps {
         script {
-        def jsonString = '{"name":"katone","age":5}'
-        def jsonObj = readJSON text: jsonString
-        assert jsonObj['name'] == 'katone'  // this is a comparison.  It returns true
-        sh "echo ${jsonObj.name}"  // prints out katone
-        sh "echo ${jsonObj.age}"   // prints out 5
+
+        def jsonSlurper = new JsonSlurper()
+        def object = jsonSlurper.parseText('{ "name": "John Doe" } /* some comment */')
+        
+        assert object instanceof Map
+        assert object.name == 'John Doe'
+
+        sh "echo ${object.name}"
         }
 			}
 		}
