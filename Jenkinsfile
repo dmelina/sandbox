@@ -5,16 +5,16 @@ pipeline {
 //	agent any
 	agent {
 		docker {
-			image 'node:alpine'
+			image 'golang:alpine'
 		}
 	}
 
 	stages {
-		stage('test-node') {
+		stage('test-golang') {
 			steps {
         script {
 				sh 'printenv'
-				sh 'node --version'
+				sh 'go version'
         }
 			}
 		}
