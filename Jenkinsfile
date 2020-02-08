@@ -24,7 +24,7 @@ pipeline {
 
         def payload = '{ "name": "John Doe" } /* some comment */'
 
-        def result = toJson(payload)
+        def result = parseJson(payload)
 
         sh "echo ${result}"
         
@@ -50,7 +50,7 @@ pipeline {
 }
 
 @NonCPS
-def toJson(String object) {
+def parseJson(String object) {
   def jsonSlurper = new JsonSlurperClassic()
   return jsonSlurper.parseText(object)
   //assert parse instanceof Map
