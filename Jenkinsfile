@@ -5,7 +5,7 @@ pipeline {
 //	agent any
 	agent {
 		docker {
-			image 'node'
+			image 'node:alpine'
 		}
 	}
 
@@ -23,9 +23,7 @@ pipeline {
         script {
 
         def payload = '{ "name": "John Doe" } /* some comment */'
-
         def result = parseJson(payload)
-
         sh "echo ${result}"
         
         //assert object instanceof Map
