@@ -50,7 +50,8 @@ pipeline {
 @NonCPS
 def parseJson(String object) {
   def jsonSlurper = new JsonSlurperClassic()
-	def toto = "test"
-  return jsonSlurper.parseText(object)
+	def toto = jsonSlurper.parseText(object)
+	def tata = "test"
+	return tata
   //assert parse instanceof Map
 }
